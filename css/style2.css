@@ -8,6 +8,7 @@ html {
   overflow-x: hidden;
   /* overflow-y: hidden; */
 }
+
 /* Background Effect */
 .ripple-background {
   position: absolute;
@@ -15,6 +16,7 @@ html {
   top: 100%;
   background-size: cover;
 }
+
 @media (max-width: 760px) {
   .ripple-background {
     position: absolute;
@@ -24,7 +26,7 @@ html {
   }
 }
 
-.circle{
+.circle {
   position: absolute;
   border-radius: 50%;
   animation: ripple 15s infinite;
@@ -36,70 +38,71 @@ html {
   background: oldlace; */
 }
 
-.small{
+.small {
   width: 200px;
   height: 200px;
   left: -100px;
   bottom: -100px;
 }
 
-.medium{
+.medium {
   width: 400px;
   height: 400px;
   left: -200px;
   bottom: -200px;
 }
 
-.large{
+.large {
   width: 600px;
   height: 600px;
   left: -300px;
   bottom: -300px;
 }
 
-.xlarge{
+.xlarge {
   width: 800px;
   height: 800px;
   left: -400px;
   bottom: -400px;
 }
 
-.xxlarge{
+.xxlarge {
   width: 1000px;
   height: 1000px;
   left: -500px;
   bottom: -500px;
 }
 
-.shade1{
+.shade1 {
   opacity: 0.2;
 }
-.shade2{
+
+.shade2 {
   opacity: 0.5;
 }
 
-.shade3{
+.shade3 {
   opacity: 0.7;
 }
 
-.shade4{
+.shade4 {
   opacity: 0.8;
 }
 
-.shade5{
+.shade5 {
   opacity: 0.9;
 }
 
-@keyframes ripple{
-  0%{
+@keyframes ripple {
+  0% {
     transform: scale(0.8);
   }
-  
-  50%{
+
+  50% {
     transform: scale(1.2);
   }
-  
-  100%{
+
+  100% {
     transform: scale(0.8);
   }
 }
@@ -112,6 +115,7 @@ body {
   /* background-color: cornsilk; */
 
 }
+
 .logo img {
   height: 27px;
 }
@@ -124,12 +128,23 @@ nav {
   width: 100%;
   z-index: 20;
   top: 0;
+  display: flex;
+  margin: 0 auto;
+}
+
+nav .toggle_btn {
+  color: #b01616;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 45px;
   padding: 0;
+  display: flex;
+  gap: 1rem;
 }
 
 nav ul li {
@@ -143,11 +158,60 @@ nav ul li a {
   text-decoration: none;
   padding: 7px 18px;
   border-radius: 25px;
-  
+
 }
 
 nav ul li .link:hover {
   background-color: #8ECAE6;
+}
+
+
+/* Drop-down-menu */
+ 
+.drop-down-menu {
+  position: absolute;
+  display: none;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  background: #F6DEC2;
+  backdrop-filter: blue(15px);
+  border-radius: 10px;
+  z-index: 5;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.open-menu {
+  height: 128px;
+}
+
+.drop-down-menu li{
+  display: flex;
+  padding: 0.7rem;
+  align-items: center;
+  justify-content: center;
+}
+.drop-down-menu li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #b01616;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  nav .toggle_btn {
+    display: block;
+    position: absolute;
+    right: 2rem;
+  }
+  .drop-down-menu{
+    display: block;
+  }
 }
 
 .search-city span {
@@ -179,7 +243,7 @@ nav ul li .link:hover {
   padding: 10px;
   cursor: pointer;
   position: absolute;
-right: 0;
+  right: 0;
 }
 
 
@@ -188,7 +252,7 @@ right: 0;
   justify-content: center;
   margin: 20px;
   z-index: 4;
-position: relative;
+  position: relative;
 }
 
 .button-container button {
@@ -206,8 +270,9 @@ position: relative;
 
 .search-city {
   position: relative;
-  margin: 10% auto;  
+  margin: 10% auto;
 }
+
 .search-city h1 {
   display: flex;
   color: white;
@@ -215,14 +280,15 @@ position: relative;
   font-weight: 400;
   align-items: center;
   justify-content: center;
-  font-family:'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Table-Data */
 
 #table-data::before {
-  display:none;
+  display: none;
 }
+
 #table-data::after {
   display: block;
 }
