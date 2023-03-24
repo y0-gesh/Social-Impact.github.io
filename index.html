@@ -30,13 +30,24 @@
             padding: 10px;
             width: 100%;
             z-index: 1;
+            display: flex;
+            margin: 0 auto;
             top: 0;
+        }
+
+        nav .toggle_btn {
+            color: #b01616;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
         }
 
         nav ul {
             list-style: none;
-            margin: 0;
+            margin: 0 0 0 45px;
             padding: 0;
+            display: flex;
+            gap: 1rem;
         }
 
         nav ul li {
@@ -57,23 +68,85 @@
             background-color: #8ECAE6;
         }
 
+        /* Drop-down-menu */
+
+        .drop-down-menu {
+            position: absolute;
+            display: none;
+            right: 2rem;
+            top: 60px;
+            height: 0;
+            width: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            background: #F6DEC2;
+            backdrop-filter: blue(15px);
+            border-radius: 10px;
+            z-index: 5;
+            overflow: hidden;
+            transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .open-menu {
+            height: 128px;
+        }
+
+        .drop-down-menu li {
+            display: flex;
+            padding: 0.7rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .drop-down-menu li a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #b01616;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            nav .toggle_btn {
+                display: block;
+                position: absolute;
+                right: 2rem;
+            }
+
+            .drop-down-menu {
+                display: block;
+            }
+        }
+
         #home {
             background-image: url(images/bg.jpg);
             background-size: cover;
             background-position: center;
             text-align: center;
+            height: 100vh;
         }
     </style>
 </head>
 
 <body>
     <nav>
+        <div class="logo"><a href="#"><img src="images/mitra1.png" alt="Mitr"></a></div>
         <ul>
-            <li class="logo"><a href="#"><img src="images/mitra1.png" alt="Mitr"></a></li>
-            <li><a href="#" class="link">Home</a></li>
+            <li><a href="index.html" class="link">Home</a></li>
             <li><a href="about.html" class="link">About</a></li>
             <li><a href="contact.html" class="link">Contact</a></li>
         </ul>
+
+        <div class="toggle_btn">
+            <i class='bx bx-menu' onclick="toggleMenu()"></i>
+        </div>
+
+        <div class="drop-down-menu" id="sub-Menu">
+            <li><a href="index.html" class="link">Home</a></li>
+            <li><a href="about.html" class="link">About</a></li>
+            <li><a href="contact.html" class="link">Contact</a></li>
+        </div>
     </nav>
 
 
@@ -115,5 +188,7 @@
         </div>
     </section>
 </body>
+<script src="script.js"></script>
+
 
 </html>

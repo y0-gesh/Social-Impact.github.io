@@ -23,7 +23,7 @@
             padding: 0;
             height: 100%;
             overflow-x: hidden;
-            overflow-y: hidden;
+            /* overflow-y: hidden; */
         }
 
         .logo img {
@@ -44,7 +44,7 @@
 
         nav ul {
             list-style: none;
-            margin: 0;
+            margin: 0 0 0 45px;
             padding: 0;
         }
 
@@ -66,22 +66,38 @@
             background-color: #8ECAE6;
         }
 
-        .home h1 {
+        #home h1 {
             position: relative;
-            font-size: 70%;
+            display: flex;
+            font-size: 2.5rem;
+            margin: 100px 0 50px;
+            justify-content: center;
+            color: orange;
+
         }
     </style>
 </head>
 
 <body>
     <nav>
+        <div class="logo"><a href="index.html"><img src="images/mitra1.png" alt="Mitr"></a></div>
         <ul>
-            <li class="logo"><a href="index.html"><img src="images/mitra1.png" alt="Mitr"></a></li>
             <li><a href="index.html" class="link">Home</a></li>
             <li><a href="about.html" class="link">About</a></li>
             <li><a href="#" class="link">Contact</a></li>
         </ul>
+
+        <div class="toggle_btn">
+            <i class='bx bx-menu' onclick="toggleMenu()"></i>
+        </div>
+
+        <div class="drop-down-menu" id="sub-Menu">
+            <li><a href="index.html" class="link">Home</a></li>
+            <li><a href="about.html" class="link">About</a></li>
+            <li><a href="contact.html" class="link">Contact</a></li>
+        </div>
     </nav>
+
     <section id="home">
         <h1 class="contact">Contact Us</h1>
     </section>
@@ -192,6 +208,7 @@
 
     </section>
 
+    <script src="script.js"></script>
 
 </body>
 
