@@ -19,3 +19,9 @@ function myFunction() {
         }
     }
 }
+
+// Drop up Menu
+let subMenu = document.getElementById("sub-Menu");
+function toggleMenu() {
+    subMenu.classList.toggle("open-menu");
+}
